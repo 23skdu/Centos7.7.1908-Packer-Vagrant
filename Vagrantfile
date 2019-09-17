@@ -1,6 +1,7 @@
 # -*- mode: ruby -*-
 # vi: set ft=ruby :
 Vagrant.configure("2") do |config|
+  config.ssh.insert_key = false
   config.vm.box = "file://virtualbox-centos7.7.1908.box"
   config.vm.network "public_network", :bridge => 'enp0s25'
   config.vm.network "private_network", virtualbox__intnet: "devnet"
@@ -12,6 +13,7 @@ Vagrant.configure("2") do |config|
      vb.memory = "4096"
      vb.cpus = 2
    end
+  config.vm.provision "file", source: "public.key", destination: "~/.ssh/authorized_keys"
   config.vm.provision "file", source: "repos/elasticsearch.repo", destination: "/tmp/elasticsearch.repo" 
   config.vm.provision "file", source: "repos/nginx.repo", destination: "/tmp/nginx.repo"
   config.vm.provision "file", source: "repos/vscode.repo", destination: "/tmp/vscode.repo"
