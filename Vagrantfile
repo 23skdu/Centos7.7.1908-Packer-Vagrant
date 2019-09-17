@@ -3,7 +3,7 @@
 Vagrant.configure("2") do |config|
   config.vm.box = "file://virtualbox-centos7.7.1908.box"
   config.vm.network "public_network", :bridge => 'enp0s25'
-  config.vm.network "private_network", virtualbox__intnet: "intnet"
+  config.vm.network "private_network", virtualbox__intnet: "devnet"
   config.vm.synced_folder "/spack", "/spack", type: 'nfs'
   config.vm.synced_folder "/CODE", "/CODE", type: 'nfs'
   config.vm.hostname = 'MyDevVM'
