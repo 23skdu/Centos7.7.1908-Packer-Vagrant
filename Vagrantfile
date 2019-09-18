@@ -6,8 +6,8 @@ Vagrant.configure("2") do |config|
   config.vm.network "public_network", :bridge => 'enp0s25'
   config.vm.network "private_network", ip: "192.168.50.4"
   config.vm.network "private_network", virtualbox__intnet: "devnet"
-  config.vm.synced_folder "/spack", "/spack", type: 'nfs'
-  config.vm.synced_folder "/CODE", "/CODE", type: 'nfs'
+  config.vm.synced_folder "/spack", "/spack", type: "nfs"
+  config.vm.synced_folder "/CODE", "/CODE", type: "nfs"
   config.vm.hostname = 'MyDevVM'
    config.vm.provider "virtualbox" do |vb|
      vb.gui = true 
@@ -51,10 +51,10 @@ Vagrant.configure("2") do |config|
      echo "Upgrading PIP and PIP3.6"
      pip2 install --upgrade pip
      python3.6 -m pip install --upgrade pip
-     echo "Python PIP: consulate python-consul python-ldap xxhash XlsxWriter lorem hvac redis psycopg2 pandas PyTest urllib3"
-     pip2 install -q consulate python-consul python-ldap xxhash XlsxWriter lorem hvac redis psycopg2 numpy pandas test urllib3
+     echo "Python PIP: yagmail[all] consulate python-consul python-ldap xxhash XlsxWriter lorem hvac redis psycopg2 pandas PyTest urllib3"
+     pip2 install -q yagmail[all] consulate python-consul python-ldap xxhash XlsxWriter lorem hvac redis psycopg2 numpy pandas test urllib3
      echo "Python3.6 PIP: consul-kv python-ldap xxhash XlsxWriter lorem hvac redis numpy psycopg2 pandas PyTest urllib3"
-     python3.6 -m pip install -q consulate python-consul consul-kv python-ldap xxhash XlsxWriter lorem hvac redis psycopg2 numpy pandas test urllib3
+     python3.6 -m pip install -q yagmail[all] consulate python-consul consul-kv python-ldap xxhash XlsxWriter lorem hvac redis psycopg2 numpy pandas test urllib3
      echo 'cpanminus install of Consul perl client'
      cpanm -i -q Consul
      echo 'cpaniminus Installs: Perl::Critic Test::More etc.'
