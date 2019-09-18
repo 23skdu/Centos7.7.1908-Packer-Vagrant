@@ -45,16 +45,13 @@ Vagrant.configure("2") do |config|
      yum clean all
      echo "Instaling Ruby Rspec"
      gem install rspec
-     echo "Installing Ruby Version Manager (RVM)"
-     gpg --keyserver hkp://pool.sks-keyservers.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3 7D2BAF1CF37B13E2069D6956105BD0E739499BDB
-     \curl -sSL https://get.rvm.io | bash
-     echo "Upgrading PIP and PIP3.6"
+     echo "Upgrading PIP2 and PIP3"
      pip2 install --upgrade pip
      python3.6 -m pip install --upgrade pip
      echo "Python PIP: yagmail[all] consulate python-consul python-ldap xxhash XlsxWriter lorem hvac redis psycopg2 pandas PyTest urllib3"
      pip2 install -q yagmail[all] consulate python-consul python-ldap xxhash XlsxWriter lorem hvac redis psycopg2 numpy pandas test urllib3
-     echo "Python3.6 PIP: consul-kv python-ldap xxhash XlsxWriter lorem hvac redis numpy psycopg2 pandas PyTest urllib3"
-     python3.6 -m pip install -q yagmail[all] consulate python-consul consul-kv python-ldap xxhash XlsxWriter lorem hvac redis psycopg2 numpy pandas test urllib3
+     echo "Python3.6 PIP: yagmail[all] consul-kv python-ldap xxhash XlsxWriter lorem hvac redis numpy psycopg2 pandas PyTest urllib3"
+     python3.6 -m pip install -q yagmail[all] consul-kv python-ldap xxhash XlsxWriter lorem hvac redis psycopg2 numpy pandas test urllib3
      echo 'cpanminus install of Consul perl client'
      cpanm -i -q Consul
      echo 'cpaniminus Installs: Perl::Critic Test::More etc.'
