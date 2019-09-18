@@ -6,8 +6,8 @@ Vagrant.configure("2") do |config|
   config.vm.network "public_network", :bridge => 'enp0s25'
   config.vm.network "private_network", ip: "192.168.50.4"
   config.vm.network "private_network", virtualbox__intnet: "devnet"
-  config.vm.synced_folder "/spack", "/spack", type: "nfs"
-  config.vm.synced_folder "/CODE", "/CODE", type: "nfs"
+  config.vm.synced_folder "/spack", "/spack", type: "nfs", nfs_version: 4
+  config.vm.synced_folder "/CODE", "/CODE", type: "nfs", nfs_version: 4
   config.vm.hostname = 'MyDevVM'
    config.vm.provider "virtualbox" do |vb|
      vb.gui = true 
