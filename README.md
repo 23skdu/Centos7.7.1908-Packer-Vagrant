@@ -1,13 +1,8 @@
 # First build a fresh vagrant/virtualbox box with the provided json manifest,kickstart config, and setup/teardown scripts
 $ packer build centos_7.7.1908.json
 
-# Use your own ssh key, not the vagrant one
-$ cp ~/.ssh/id_rsa.pub public.key
-
 # Then just vagrant up with your fresh box
 $ vagrant up
-
-
 
 # CentosDevBox_vagrant
 Centos DevBox Vagrantfile with unit test
