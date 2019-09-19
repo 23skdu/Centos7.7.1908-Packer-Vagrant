@@ -15,7 +15,6 @@ Vagrant.configure("2") do |config|
      vb.cpus = 2
    end
   config.vm.provision "file", source: "repos/elasticsearch.repo", destination: "/tmp/elasticsearch.repo" 
-  config.vm.provision "file", source: "repos/nginx.repo", destination: "/tmp/nginx.repo"
   config.vm.provision "file", source: "repos/vscode.repo", destination: "/tmp/vscode.repo"
   config.vm.provision "file", source: "t/vagrantfile_run.t", destination: "/tmp/vagrantfile_run.t"
   config.vm.provision "shell", inline: <<-SHELL
