@@ -38,13 +38,8 @@ Vagrant.configure("2") do |config|
      rpm --quiet --import https://packages.microsoft.com/keys/microsoft.asc
      mv /tmp/vscode.repo /etc/yum.repos.d/
      yum install -y -q code
-     echo "Installing Nginx from Nginx.org repo"
-     mv /tmp/nginx.repo /etc/yum.repos.d/
-     yum install -y -q nginx
      echo 'Clean up Yum'
      yum clean all
-     echo "Instaling Ruby Rspec"
-     gem install rspec
      echo "Upgrading PIP2 and PIP3"
      pip2 install --upgrade pip
      python3.6 -m pip install --upgrade pip
