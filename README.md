@@ -39,3 +39,7 @@ All tests successful.
 Files=1, Tests=22,  1 wallclock secs ( 0.03 usr  0.00 sys +  0.79 cusr  0.10 csys =  0.92 CPU)
 Result: PASS
 ```
+
+## License
+
+This project is released into the public domain under the [Unlicense](https://unlicense.org). See [LICENSE](LICENSE) for details.
